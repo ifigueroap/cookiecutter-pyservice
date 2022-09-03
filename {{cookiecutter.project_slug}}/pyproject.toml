@@ -3,11 +3,8 @@ name = "{{ cookiecutter.project_slug }}"
 version = "{{ cookiecutter.version }}"
 description = "{{ cookiecutter.project_short_description }}"
 authors = ["{{ cookiecutter.full_name.replace("\"", "\\\"") }} <{{ cookiecutter.email }}>"]
-readme = "README.rst"
+readme = "README.md"
 keywords = ["{{ cookiecutter.project_slug }}"]
-packages = [
-    { include = "{{cookiecutter.module_name}}", from = "src" },
-]
 
 [tool.poetry.dependencies]
 python = "^{{cookiecutter.python_version}}"
