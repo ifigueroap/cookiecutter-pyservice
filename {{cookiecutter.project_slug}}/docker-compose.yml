@@ -1,0 +1,32 @@
+x-service: &service
+  restart: always
+  environment:
+    - TZ=America/Santiago
+  env_file:
+    - .env
+  dns:
+    # Internal SP DNS
+    - 10.221.127.2
+    # Google DNSs
+    - 8.8.8.8
+    - 8.8.4.4
+  logging:
+    driver: json-file
+    options:
+      max-size: "50m"
+      max-file: "5"
+
+version: "3.7"
+
+services:
+  {{cookiecutter.project_slug}}:
+    <<: *service
+    container_name: {{cookiecutter.project_slug}}-local
+    build:
+      context: ./{{cookiecutter.project_slug}}
+      dockerfile: dev.Dockerfile
+    image: {{cookiecutter.project_slug}}-local
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/src:/app/{{cookiecutter.project_slug}}/src

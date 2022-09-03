@@ -7,7 +7,11 @@ from pydantic import BaseSettings, Field
 class Settings(BaseSettings):
     """Global settings for the {{cookiecutter.project_name}} project."""
 
-    SAMPLE_FIELD: str = Field(None, env="SAMPLE_FIELD")
+    version: str = Field("1.0", env="VERSION")
+    commit: str = Field("local", env="COMMIT")
+
+    CELERY_BROKER_URL: str = Field(None, env="CELERY_BROKER_URL")
+    CELERY_RESULT_BACKEND: str = Field(None, env="CELERY_RESULT_BACKEND")
 
     class Config:
         """Sets up settings to read config values from .env file."""
