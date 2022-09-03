@@ -1,12 +1,10 @@
 {
   "full_name": "Ismael Figueroa",
   "email": "ifigueroap@gmail.com",
-  "github_username": "ifigueroap",
   "project_name": "Python Service Boilerplate",
   "project_api_name": "Python Service API",
   "project_slug": "pyservice",
   "project_short_description": "Microservice with FastAPI, Typer, and Celery tasks",
-  "pypi_username": "{{ cookiecutter.github_username }}",
   "version": "0.1.0",
   "python_version": "3.8"
 }

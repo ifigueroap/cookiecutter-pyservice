@@ -29,4 +29,4 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/src:/app/{{cookiecutter.project_slug}}/src
+      - ./{{cookiecutter.project_slug}}/src:/app/{{cookiecutter.project_slug}}/src

@@ -8,7 +8,7 @@ from fastapi import APIRouter
 
 from settings import settings
 
-from .models.health import Health
+from models.health import Health
 
 router = APIRouter()
 
