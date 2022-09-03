@@ -5,7 +5,7 @@ COPY . .
 
 ARG VERSION=0.0.0
 RUN sed -i "s/0\.0\.0/${VERSION:-0.0.0}/g" pyproject.toml
-RUN sed -i "s/__VERSION__/${VERSION:-0.0.0}/g" {{cookiecutter.project_slug}}/version.py
+RUN sed -i "s/__VERSION__/${VERSION:-0.0.0}/g" ./version.py
 
 ARG COMMIT=local
 ENV COMMIT=${COMMIT}

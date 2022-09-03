@@ -23,7 +23,7 @@ services:
     <<: *service
     container_name: {{cookiecutter.project_slug}}-local
     build:
-      context: ./{{cookiecutter.project_slug}}
+      context: .
       dockerfile: dev.Dockerfile
     image: {{cookiecutter.project_slug}}-local
     ports:

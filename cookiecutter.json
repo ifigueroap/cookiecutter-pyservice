@@ -8,5 +8,5 @@
   "project_short_description": "Microservice with FastAPI, Typer, and Celery tasks",
   "pypi_username": "{{ cookiecutter.github_username }}",
   "version": "0.1.0",
-  "python_version": "python-3.8"
+  "python_version": "3.8"
 }
