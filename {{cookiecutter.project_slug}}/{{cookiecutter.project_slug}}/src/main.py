@@ -6,9 +6,9 @@ Run as a regular FastAPI application to access the documentation.
 
 import logging
 
-from pydantic import BaseModel
-from fastapi import FastAPI
 from celery import Celery
+from fastapi import FastAPI
+from pydantic import BaseModel
 
 from routers.health_router import router as health_router
 from settings import settings
@@ -18,18 +18,17 @@ logger = logging.getLevelName(__name__)
 
 # Celery queue configuration
 celery = Celery(
-    "celery",
-    backend=settings.CELERY_BROKER_URL,
-    broker=settings.CELERY_RESULT_BACKEND
+    "celery", backend=settings.CELERY_BROKER_URL, broker=settings.CELERY_RESULT_BACKEND
 )
 
 
 class Item(BaseModel):
     """Payload structure for Celery tasks."""
+
     name: str
 
 
-app = FastAPI(title="{{cookiecutter.project_api_name}}")
+app = FastAPI(title="Python Service API")
 
 
 @app.post("/hello")

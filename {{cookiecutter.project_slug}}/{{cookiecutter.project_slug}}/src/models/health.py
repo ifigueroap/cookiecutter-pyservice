@@ -5,6 +5,7 @@ from pydantic import BaseModel
 
 class StatusEnum(str, Enum):
     """Health status enumeration."""
+
     passed = "pass"
     failed = "fail"
     warned = "warn"

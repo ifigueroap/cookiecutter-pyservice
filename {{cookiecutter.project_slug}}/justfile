@@ -1,7 +1,4 @@
 set dotenv-load := false
 
-hello:
-	echo "Hello";
-
 bash:
 	docker-compose exec {{cookiecutter.project_slug}} bash

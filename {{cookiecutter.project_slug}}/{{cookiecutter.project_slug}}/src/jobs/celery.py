@@ -1,5 +1,6 @@
-from celery import Celery
 from settings import settings
+
+from celery import Celery
 
 app = Celery(
     "jobs",

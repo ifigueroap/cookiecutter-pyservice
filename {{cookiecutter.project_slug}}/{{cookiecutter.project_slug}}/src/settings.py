@@ -5,7 +5,7 @@ from pydantic import BaseSettings, Field
 
 
 class Settings(BaseSettings):
-    """Global settings for the {{cookiecutter.project_name}} project."""
+    """Global settings for the Python Service Boilerplate project."""
 
     version: str = Field("1.0", env="VERSION")
     commit: str = Field("local", env="COMMIT")

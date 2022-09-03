@@ -1,9 +1,8 @@
 import logging
+
 import typer
 
-
 from settings import settings
-
 
 app = typer.Typer()
 logger = logging.getLogger(__name__)

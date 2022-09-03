@@ -5,10 +5,8 @@ Provides health and readiness diagnostics.
 """
 
 from fastapi import APIRouter
-
-from settings import settings
-
 from models.health import Health
+from settings import settings
 
 router = APIRouter()
 

@@ -3,10 +3,11 @@ from __future__ import absolute_import
 import logging
 import traceback
 from time import sleep
-from celery import states
-from settings import settings
 
 from {{cookiecutter.project_slug}}.src.jobs.celery import app
+from settings import settings
+
+from celery import states
 
 logging.basicConfig(
     level=settings.log_level.upper(),
@@ -18,6 +19,7 @@ logger = logging.getLogger(__name__)
 
 @app.task(name="hello.task", bind=True)
 def hello_world(self, name: str):
+    """Hello world sample task."""
     try:
         if name == "error":
             k = 1 / 0
